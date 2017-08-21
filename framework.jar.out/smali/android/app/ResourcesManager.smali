@@ -2774,14 +2774,14 @@
     .line 294
     :cond_d
     :goto_9
-    new-instance v25, Landroid/content/res/Resources;
+    new-instance v25, Landroid/content/res/MiuiResources;
 
     .end local v25    # "r":Landroid/content/res/Resources;
     move-object/from16 v0, v25
 
     move-object/from16 v1, p8
 
-    invoke-direct {v0, v7, v15, v14, v1}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
+    invoke-direct {v0, v7, v15, v14, v1}, Landroid/content/res/MiuiResources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
 
     .line 295
     .restart local v25    # "r":Landroid/content/res/Resources;
