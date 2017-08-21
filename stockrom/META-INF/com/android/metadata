@@ -1,0 +1,3 @@
+post-build=samsung/baffinxx/baffin:4.2.2/JDQ39/I9082XXUBMJ1:user/release-keys
+post-timestamp=1473526662
+pre-device=baffin
