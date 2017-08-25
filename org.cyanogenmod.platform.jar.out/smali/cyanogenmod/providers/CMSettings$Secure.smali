@@ -1,0 +1,1376 @@
+.class public final Lcyanogenmod/providers/CMSettings$Secure;
+.super Landroid/provider/Settings$NameValueTable;
+.source "CMSettings.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcyanogenmod/providers/CMSettings;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Secure"
+.end annotation
+
+
+# static fields
+.field public static final ADB_NOTIFY:Ljava/lang/String; = "adb_notify"
+
+.field public static final ADB_PORT:Ljava/lang/String; = "adb_port"
+
+.field public static final ADVANCED_MODE:Ljava/lang/String; = "advanced_mode"
+
+.field public static final ADVANCED_REBOOT:Ljava/lang/String; = "advanced_reboot"
+
+.field public static final APP_PERFORMANCE_PROFILES_ENABLED:Ljava/lang/String; = "app_perf_profiles_enabled"
+
+.field public static final BUTTON_BACKLIGHT_TIMEOUT:Ljava/lang/String; = "button_backlight_timeout"
+
+.field public static final BUTTON_BRIGHTNESS:Ljava/lang/String; = "button_brightness"
+
+.field public static final CM_SETUP_WIZARD_COMPLETED:Ljava/lang/String; = "cm_setup_wizard_completed"
+
+.field public static final CONTENT_URI:Landroid/net/Uri;
+
+.field public static final DEFAULT_LIVE_LOCK_SCREEN_COMPONENT:Ljava/lang/String; = "default_live_lock_screen_component"
+
+.field public static final DEFAULT_THEME_COMPONENTS:Ljava/lang/String; = "default_theme_components"
+
+.field public static final DEFAULT_THEME_PACKAGE:Ljava/lang/String; = "default_theme_package"
+
+.field public static final DEVELOPMENT_SHORTCUT:Ljava/lang/String; = "development_shortcut"
+
+.field public static final DEVICE_HOSTNAME:Ljava/lang/String; = "device_hostname"
+
+.field public static final DEV_FORCE_SHOW_NAVBAR:Ljava/lang/String; = "dev_force_show_navbar"
+
+.field public static final DISPLAY_GAMMA_CALIBRATION_PREFIX:Ljava/lang/String; = "display_gamma_"
+
+.field public static final ENABLED_EVENT_LIVE_LOCKS_KEY:Ljava/lang/String; = "live_lockscreens_events_enabled"
+
+.field public static final FEATURE_TOUCH_HOVERING:Ljava/lang/String; = "feature_touch_hovering"
+
+.field public static final KEYBOARD_BRIGHTNESS:Ljava/lang/String; = "keyboard_brightness"
+
+.field public static final KILL_APP_LONGPRESS_BACK:Ljava/lang/String; = "kill_app_longpress_back"
+
+.field public static final LEGACY_SECURE_SETTINGS:[Ljava/lang/String;
+
+.field public static final LIVE_DISPLAY_COLOR_MATRIX:Ljava/lang/String; = "live_display_color_matrix"
+
+.field public static final LIVE_LOCK_SCREEN_ENABLED:Ljava/lang/String; = "live_lock_screen_enabled"
+
+.field public static final LOCKSCREEN_INTERNALLY_ENABLED:Ljava/lang/String; = "lockscreen_internally_enabled"
+
+.field public static final LOCKSCREEN_TARGETS:Ljava/lang/String; = "lockscreen_target_actions"
+
+.field public static final LOCKSCREEN_VISUALIZER_ENABLED:Ljava/lang/String; = "lockscreen_visualizer"
+
+.field public static final LOCK_PASS_TO_SECURITY_VIEW:Ljava/lang/String; = "lock_screen_pass_to_security_view"
+
+.field public static final LOCK_SCREEN_BLUR_ENABLED:Ljava/lang/String; = "lock_screen_blur_enabled"
+
+.field public static final LOCK_SCREEN_WEATHER_ENABLED:Ljava/lang/String; = "lock_screen_weather_enabled"
+
+.field protected static final MOVED_TO_GLOBAL:Landroid/util/ArraySet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/ArraySet",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final NAVIGATION_RING_TARGETS:[Ljava/lang/String;
+
+.field public static final PERFORMANCE_PROFILE:Ljava/lang/String; = "performance_profile"
+
+.field public static final POWER_MENU_ACTIONS:Ljava/lang/String; = "power_menu_actions"
+
+.field public static final PRIVACY_GUARD_DEFAULT:Ljava/lang/String; = "privacy_guard_default"
+
+.field public static final PRIVACY_GUARD_NOTIFICATION:Ljava/lang/String; = "privacy_guard_notification"
+
+.field public static final PROTECTED_COMPONENTS:Ljava/lang/String; = "protected_components"
+
+.field public static final PROTECTED_COMPONENTS_MANAGER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+.field public static final PROTECTED_COMPONENTS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+.field public static final PROTECTED_COMPONENT_MANAGERS:Ljava/lang/String; = "protected_component_managers"
+
+.field public static final QS_LOCATION_ADVANCED:Ljava/lang/String; = "qs_location_advanced"
+
+.field public static final QS_SHOW_BRIGHTNESS_SLIDER:Ljava/lang/String; = "qs_show_brightness_slider"
+
+.field public static final QS_TILES:Ljava/lang/String; = "sysui_qs_tiles"
+
+.field public static final QS_USE_MAIN_TILES:Ljava/lang/String; = "sysui_qs_main_tiles"
+
+.field public static final RECENTS_LONG_PRESS_ACTIVITY:Ljava/lang/String; = "recents_long_press_activity"
+
+.field public static final RING_HOME_BUTTON_BEHAVIOR:Ljava/lang/String; = "ring_home_button_behavior"
+
+.field public static final RING_HOME_BUTTON_BEHAVIOR_ANSWER:I = 0x2
+
+.field public static final RING_HOME_BUTTON_BEHAVIOR_DEFAULT:I = 0x1
+
+.field public static final RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING:I = 0x1
+
+.field public static final STATS_COLLECTION:Ljava/lang/String; = "stats_collection"
+
+.field public static final STATS_COLLECTION_REPORTED:Ljava/lang/String; = "stats_collection_reported"
+
+.field public static final SYS_PROP_CM_SETTING_VERSION:Ljava/lang/String; = "sys.cm_settings_secure_version"
+
+.field public static final THEME_PREV_BOOT_API_LEVEL:Ljava/lang/String; = "theme_prev_boot_api_level"
+
+.field public static final VALIDATORS:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcyanogenmod/providers/CMSettings$Validator;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final VIBRATOR_INTENSITY:Ljava/lang/String; = "vibrator_intensity"
+
+.field public static final WEATHER_PROVIDER_SERVICE:Ljava/lang/String; = "weather_provider_service"
+
+.field public static final __MAGICAL_TEST_PASSING_ENABLER:Ljava/lang/String; = "___magical_test_passing_enabler"
+
+.field private static final sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 9
+
+    .prologue
+    const/4 v8, 0x3
+
+    const/4 v7, 0x2
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
+
+    .line 2129
+    const-string v0, "content://cmsettings/secure"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->CONTENT_URI:Landroid/net/Uri;
+
+    .line 2133
+    new-instance v0, Lcyanogenmod/providers/CMSettings$NameValueCache;
+
+    const-string v1, "sys.cm_settings_secure_version"
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$Secure;->CONTENT_URI:Landroid/net/Uri;
+
+    const-string v3, "GET_secure"
+
+    const-string v4, "PUT_secure"
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcyanogenmod/providers/CMSettings$NameValueCache;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
+
+    .line 2142
+    new-instance v0, Landroid/util/ArraySet;
+
+    invoke-direct {v0, v5}, Landroid/util/ArraySet;-><init>(I)V
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->MOVED_TO_GLOBAL:Landroid/util/ArraySet;
+
+    .line 2143
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->MOVED_TO_GLOBAL:Landroid/util/ArraySet;
+
+    const-string v1, "dev_force_show_navbar"
+
+    invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
+
+    .line 2562
+    new-array v0, v8, [Ljava/lang/String;
+
+    const-string v1, "navigation_ring_targets_0"
+
+    aput-object v1, v0, v6
+
+    const-string v1, "navigation_ring_targets_1"
+
+    aput-object v1, v0, v5
+
+    const-string v1, "navigation_ring_targets_2"
+
+    aput-object v1, v0, v7
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->NAVIGATION_RING_TARGETS:[Ljava/lang/String;
+
+    .line 2846
+    const/16 v0, 0x22
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const-string v1, "advanced_mode"
+
+    aput-object v1, v0, v6
+
+    const-string v1, "button_backlight_timeout"
+
+    aput-object v1, v0, v5
+
+    const-string v1, "button_brightness"
+
+    aput-object v1, v0, v7
+
+    const-string v1, "default_theme_components"
+
+    aput-object v1, v0, v8
+
+    const/4 v1, 0x4
+
+    const-string v2, "default_theme_package"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    const-string v2, "dev_force_show_navbar"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    const-string v2, "keyboard_brightness"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    const-string v2, "power_menu_actions"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    const-string v2, "stats_collection"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    const-string v2, "qs_show_brightness_slider"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    const-string v2, "sysui_qs_tiles"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    const-string v2, "sysui_qs_main_tiles"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$Secure;->NAVIGATION_RING_TARGETS:[Ljava/lang/String;
+
+    aget-object v2, v2, v6
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xd
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$Secure;->NAVIGATION_RING_TARGETS:[Ljava/lang/String;
+
+    aget-object v2, v2, v5
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xe
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$Secure;->NAVIGATION_RING_TARGETS:[Ljava/lang/String;
+
+    aget-object v2, v2, v7
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xf
+
+    const-string v2, "recents_long_press_activity"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x10
+
+    const-string v2, "adb_notify"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x11
+
+    const-string v2, "adb_port"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x12
+
+    const-string v2, "device_hostname"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x13
+
+    const-string v2, "kill_app_longpress_back"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x14
+
+    const-string v2, "protected_components"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x15
+
+    const-string v2, "live_display_color_matrix"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x16
+
+    const-string v2, "advanced_reboot"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x17
+
+    const-string v2, "theme_prev_boot_api_level"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x18
+
+    const-string v2, "lockscreen_target_actions"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x19
+
+    const-string v2, "ring_home_button_behavior"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1a
+
+    const-string v2, "privacy_guard_default"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1b
+
+    const-string v2, "privacy_guard_notification"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1c
+
+    const-string v2, "development_shortcut"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1d
+
+    const-string v2, "performance_profile"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1e
+
+    const-string v2, "app_perf_profiles_enabled"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1f
+
+    const-string v2, "qs_location_advanced"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x20
+
+    const-string v2, "lockscreen_visualizer"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x21
+
+    const-string v2, "lock_screen_pass_to_security_view"
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->LEGACY_SECURE_SETTINGS:[Ljava/lang/String;
+
+    .line 2893
+    new-instance v0, Lcyanogenmod/providers/CMSettings$Secure$1;
+
+    invoke-direct {v0}, Lcyanogenmod/providers/CMSettings$Secure$1;-><init>()V
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->PROTECTED_COMPONENTS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2913
+    new-instance v0, Lcyanogenmod/providers/CMSettings$Secure$2;
+
+    invoke-direct {v0}, Lcyanogenmod/providers/CMSettings$Secure$2;-><init>()V
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->PROTECTED_COMPONENTS_MANAGER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    .line 2939
+    new-instance v0, Landroid/util/ArrayMap;
+
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+
+    sput-object v0, Lcyanogenmod/providers/CMSettings$Secure;->VALIDATORS:Ljava/util/Map;
+
+    .line 2942
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->VALIDATORS:Ljava/util/Map;
+
+    const-string v1, "protected_components"
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$Secure;->PROTECTED_COMPONENTS_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2943
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->VALIDATORS:Ljava/util/Map;
+
+    const-string v1, "protected_component_managers"
+
+    sget-object v2, Lcyanogenmod/providers/CMSettings$Secure;->PROTECTED_COMPONENTS_MANAGER_VALIDATOR:Lcyanogenmod/providers/CMSettings$Validator;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2944
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 2128
+    invoke-direct {p0}, Landroid/provider/Settings$NameValueTable;-><init>()V
+
+    return-void
+.end method
+
+.method public static getDelimitedStringAsList(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+    .locals 8
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "delimiter"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/ContentResolver;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2172
+    invoke-static {p0, p1}, Lcyanogenmod/providers/CMSettings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 2173
+    .local v2, "baseString":Ljava/lang/String;
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    .line 2174
+    .local v6, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_1
+
+    .line 2175
+    invoke-static {p2}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v2, v7}, Landroid/text/TextUtils;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2176
+    .local v1, "array":[Ljava/lang/String;
+    move-object v0, v1
+
+    .local v0, "arr$":[Ljava/lang/String;
+    array-length v5, v0
+
+    .local v5, "len$":I
+    const/4 v3, 0x0
+
+    .local v3, "i$":I
+    :goto_0
+    if-ge v3, v5, :cond_1
+
+    aget-object v4, v0, v3
+
+    .line 2177
+    .local v4, "item":Ljava/lang/String;
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    .line 2176
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .line 2180
+    :cond_0
+    invoke-interface {v6, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    .line 2183
+    .end local v0    # "arr$":[Ljava/lang/String;
+    .end local v1    # "array":[Ljava/lang/String;
+    .end local v3    # "i$":I
+    .end local v4    # "item":Ljava/lang/String;
+    .end local v5    # "len$":I
+    :cond_1
+    return-object v6
+.end method
+
+.method public static getFloat(Landroid/content/ContentResolver;Ljava/lang/String;)F
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2460
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getFloat(Landroid/content/ContentResolver;Ljava/lang/String;F)F
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "def"    # F
+
+    .prologue
+    .line 2426
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;FI)F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;FI)F
+    .locals 2
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "def"    # F
+    .param p3, "userId"    # I
+
+    .prologue
+    .line 2432
+    invoke-static {p0, p1, p3}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2434
+    .local v1, "v":Ljava/lang/String;
+    if-eqz v1, :cond_0
+
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result p2
+
+    .line 2436
+    .end local p2    # "def":F
+    :cond_0
+    :goto_0
+    return p2
+
+    .line 2435
+    .restart local p2    # "def":F
+    :catch_0
+    move-exception v0
+
+    .line 2436
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    goto :goto_0
+.end method
+
+.method public static getFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)F
+    .locals 3
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "userId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2466
+    invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2467
+    .local v1, "v":Ljava/lang/String;
+    if-nez v1, :cond_0
+
+    .line 2468
+    new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+
+    invoke-direct {v2, p1}, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 2471
+    :cond_0
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v2
+
+    return v2
+
+    .line 2472
+    :catch_0
+    move-exception v0
+
+    .line 2473
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+
+    invoke-direct {v2, p1}, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+.end method
+
+.method public static getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2287
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "def"    # I
+
+    .prologue
+    .line 2254
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    .locals 3
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "userId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2293
+    invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2295
+    .local v1, "v":Ljava/lang/String;
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v2
+
+    return v2
+
+    .line 2296
+    :catch_0
+    move-exception v0
+
+    .line 2297
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+
+    invoke-direct {v2, p1}, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+.end method
+
+.method public static getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    .locals 2
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "def"    # I
+    .param p3, "userId"    # I
+
+    .prologue
+    .line 2259
+    invoke-static {p0, p1, p3}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2261
+    .local v1, "v":Ljava/lang/String;
+    if-eqz v1, :cond_0
+
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result p2
+
+    .line 2263
+    .end local p2    # "def":I
+    :cond_0
+    :goto_0
+    return p2
+
+    .line 2262
+    .restart local p2    # "def":I
+    :catch_0
+    move-exception v0
+
+    .line 2263
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    goto :goto_0
+.end method
+
+.method public static getLong(Landroid/content/ContentResolver;Ljava/lang/String;)J
+    .locals 2
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2374
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
+    .locals 2
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "def"    # J
+
+    .prologue
+    .line 2339
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, p3, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;JI)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)J
+    .locals 4
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "userId"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+        }
+    .end annotation
+
+    .prologue
+    .line 2380
+    invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2382
+    .local v1, "valString":Ljava/lang/String;
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-wide v2
+
+    return-wide v2
+
+    .line 2383
+    :catch_0
+    move-exception v0
+
+    .line 2384
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    new-instance v2, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;
+
+    invoke-direct {v2, p1}, Lcyanogenmod/providers/CMSettings$CMSettingNotFoundException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+.end method
+
+.method public static getLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;JI)J
+    .locals 4
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "def"    # J
+    .param p4, "userId"    # I
+
+    .prologue
+    .line 2345
+    invoke-static {p0, p1, p4}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2348
+    .local v1, "valString":Ljava/lang/String;
+    if-eqz v1, :cond_0
+
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-wide v2
+
+    .line 2352
+    .local v2, "value":J
+    :goto_0
+    return-wide v2
+
+    .end local v2    # "value":J
+    :cond_0
+    move-wide v2, p2
+
+    .line 2348
+    goto :goto_0
+
+    .line 2349
+    :catch_0
+    move-exception v0
+
+    .line 2350
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    move-wide v2, p2
+
+    .restart local v2    # "value":J
+    goto :goto_0
+.end method
+
+.method public static getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+
+    .prologue
+    .line 2203
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+    .locals 3
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "userId"    # I
+
+    .prologue
+    .line 2209
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->MOVED_TO_GLOBAL:Landroid/util/ArraySet;
+
+    invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2210
+    const-string v0, "CMSettings"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Setting "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " has moved from CMSettings.Secure"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " to CMSettings.Global, value is unchanged."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2212
+    invoke-static {p0, p1, p2}, Lcyanogenmod/providers/CMSettings$Global;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 2214
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
+
+    invoke-virtual {v0, p0, p1, p2}, Lcyanogenmod/providers/CMSettings$NameValueCache;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public static getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    .locals 1
+    .param p0, "name"    # Ljava/lang/String;
+
+    .prologue
+    .line 2193
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-static {v0, p0}, Landroid/provider/Settings$NameValueTable;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static isLegacySetting(Ljava/lang/String;)Z
+    .locals 1
+    .param p0, "key"    # Ljava/lang/String;
+
+    .prologue
+    .line 2887
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->LEGACY_SECURE_SETTINGS:[Ljava/lang/String;
+
+    invoke-static {v0, p0}, Lcom/android/internal/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putFloat(Landroid/content/ContentResolver;Ljava/lang/String;F)Z
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # F
+
+    .prologue
+    .line 2491
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, v0}, Lcyanogenmod/providers/CMSettings$Secure;->putFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;FI)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;FI)Z
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # F
+    .param p3, "userId"    # I
+
+    .prologue
+    .line 2497
+    invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, v0, p3}, Lcyanogenmod/providers/CMSettings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # I
+
+    .prologue
+    .line 2315
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, v0}, Lcyanogenmod/providers/CMSettings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+    .locals 1
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # I
+    .param p3, "userId"    # I
+
+    .prologue
+    .line 2321
+    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, v0, p3}, Lcyanogenmod/providers/CMSettings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putListAsDelimitedString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+    .locals 1
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "delimiter"    # Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/ContentResolver;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 2158
+    .local p3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    invoke-static {p2, p3}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 2159
+    .local v0, "store":Ljava/lang/String;
+    invoke-static {p0, p1, v0}, Lcyanogenmod/providers/CMSettings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 2160
+    return-void
+.end method
+
+.method public static putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
+    .locals 2
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # J
+
+    .prologue
+    .line 2402
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, p3, v0}, Lcyanogenmod/providers/CMSettings$Secure;->putLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;JI)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putLongForUser(Landroid/content/ContentResolver;Ljava/lang/String;JI)Z
+    .locals 2
+    .param p0, "cr"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # J
+    .param p4, "userId"    # I
+
+    .prologue
+    .line 2408
+    invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, v0, p4}, Lcyanogenmod/providers/CMSettings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 1
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # Ljava/lang/String;
+
+    .prologue
+    .line 2225
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v0
+
+    invoke-static {p0, p1, p2, v0}, Lcyanogenmod/providers/CMSettings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+    .locals 3
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "value"    # Ljava/lang/String;
+    .param p3, "userId"    # I
+
+    .prologue
+    .line 2231
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->MOVED_TO_GLOBAL:Landroid/util/ArraySet;
+
+    invoke-virtual {v0, p1}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2232
+    const-string v0, "CMSettings"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Setting "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " has moved from CMSettings.Secure"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " to CMSettings.Global, value is unchanged."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2234
+    const/4 v0, 0x0
+
+    .line 2236
+    :goto_0
+    return v0
+
+    :cond_0
+    sget-object v0, Lcyanogenmod/providers/CMSettings$Secure;->sNameValueCache:Lcyanogenmod/providers/CMSettings$NameValueCache;
+
+    invoke-virtual {v0, p0, p1, p2, p3}, Lcyanogenmod/providers/CMSettings$NameValueCache;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public static shouldInterceptSystemProvider(Ljava/lang/String;)Z
+    .locals 3
+    .param p0, "key"    # Ljava/lang/String;
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 2950
+    const/4 v1, -0x1
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    packed-switch v2, :pswitch_data_0
+
+    :cond_0
+    :goto_0
+    packed-switch v1, :pswitch_data_1
+
+    .line 2957
+    :goto_1
+    return v0
+
+    .line 2950
+    :pswitch_0
+    const-string v2, "dev_force_show_navbar"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 2955
+    :pswitch_1
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    .line 2950
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x66e8aa94
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_1
+    .end packed-switch
+.end method
