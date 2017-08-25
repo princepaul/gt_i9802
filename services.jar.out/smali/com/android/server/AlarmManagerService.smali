@@ -1776,7 +1776,7 @@
 
     .line 2787
     .local v2, "userId":I
-    invoke-direct {p0, v2}, Lcom/android/server/AlarmManagerService;->publishNextAlarmCustomTile(I)V
+    #invoke-direct {p0, v2}, Lcom/android/server/AlarmManagerService;->publishNextAlarmCustomTile(I)V
 
     .line 2785
     add-int/lit8 v1, v1, 0x1
@@ -2791,7 +2791,7 @@
 
     move-result v7
 
-    invoke-direct {p0, v7}, Lcom/android/server/AlarmManagerService;->publishNextAlarmCustomTile(I)V
+    #invoke-direct {p0, v7}, Lcom/android/server/AlarmManagerService;->publishNextAlarmCustomTile(I)V
 
     .line 1089
     :cond_4
